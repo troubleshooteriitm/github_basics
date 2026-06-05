@@ -1,11 +1,388 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Attendance System</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f8fafc;
+    color:#1e293b;
+}
+
+/* Navbar */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#2563eb;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#475569;
+    font-weight:500;
+}
+
+.login-btn{
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+}
+
+/* Hero Section */
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:80px 8%;
+    min-height:85vh;
+}
+
+.hero-text{
+    max-width:600px;
+}
+
+.hero-text h1{
+    font-size:58px;
+    line-height:1.2;
+    margin-bottom:20px;
+}
+
+.hero-text h1 span{
+    color:#2563eb;
+}
+
+.hero-text p{
+    font-size:18px;
+    color:#64748b;
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+}
+
+.primary-btn{
+    background:#2563eb;
+    color:white;
+    padding:14px 28px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.secondary-btn{
+    background:white;
+    color:#2563eb;
+    border:2px solid #2563eb;
+    padding:14px 28px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.hero-card{
+    width:420px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(37,99,235,0.15);
+}
+
+.stat{
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid #e2e8f0;
+}
+
+.stat:last-child{
+    border-bottom:none;
+}
+
+/* Features */
+.features{
+    padding:80px 8%;
+    text-align:center;
+}
+
+.section-title{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.section-subtitle{
+    color:#64748b;
+    margin-bottom:50px;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.feature-card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.05);
+    transition:0.3s;
+}
+
+.feature-card:hover{
+    transform:translateY(-8px);
+}
+
+.feature-icon{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+/* Stats */
+.stats-section{
+    background:#2563eb;
+    color:white;
+    padding:70px 8%;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:30px;
+    text-align:center;
+}
+
+.stats-grid h2{
+    font-size:42px;
+}
+
+/* CTA */
+.cta{
+    text-align:center;
+    padding:80px 8%;
+}
+
+.cta h2{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.cta p{
+    color:#64748b;
+    margin-bottom:30px;
+}
+
+/* Footer */
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+/* Mobile */
+@media(max-width:900px){
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        gap:40px;
+    }
+
+    .hero-text h1{
+        font-size:42px;
+    }
+
+    .hero-card{
+        width:100%;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .nav-links{
+        display:none;
+    }
+}
+</style>
 </head>
+
 <body>
-    <h1>Welcome to My Flask App</h1>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">Attendify</div>
+
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Features</a>
+        <a href="#">Reports</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <button class="login-btn">Login</button>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+
+    <div class="hero-text">
+        <h1>Smart <span>Attendance Tracking</span> Made Easy</h1>
+
+        <p>
+            Automate attendance management for schools, colleges,
+            training institutes, and organizations. Track attendance,
+            generate reports, and save hours of manual work.
+        </p>
+
+        <div class="hero-buttons">
+            <button class="primary-btn">Get Started</button>
+            <button class="secondary-btn">Learn More</button>
+        </div>
+    </div>
+
+    <div class="hero-card">
+        <h3>Today's Dashboard</h3>
+
+        <div class="stat">
+            <span>Total Students</span>
+            <strong>1,250</strong>
+        </div>
+
+        <div class="stat">
+            <span>Present Today</span>
+            <strong>1,120</strong>
+        </div>
+
+        <div class="stat">
+            <span>Absent</span>
+            <strong>130</strong>
+        </div>
+
+        <div class="stat">
+            <span>Attendance Rate</span>
+            <strong>89.6%</strong>
+        </div>
+    </div>
+
+</section>
+
+<!-- Features -->
+<section class="features">
+
+    <h2 class="section-title">Why Choose Attendify?</h2>
+
+    <p class="section-subtitle">
+        Everything you need to manage attendance efficiently.
+    </p>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3>Mobile Friendly</h3>
+            <p>Take attendance anywhere using mobile devices.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Instant Reports</h3>
+            <p>Generate attendance reports in seconds.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Analytics Dashboard</h3>
+            <p>Visualize attendance trends and performance.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Secure Data</h3>
+            <p>Your attendance records remain protected.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Statistics -->
+<section class="stats-section">
+
+    <div class="stats-grid">
+
+        <div>
+            <h2>50K+</h2>
+            <p>Students Managed</p>
+        </div>
+
+        <div>
+            <h2>500+</h2>
+            <p>Institutions</p>
+        </div>
+
+        <div>
+            <h2>99.9%</h2>
+            <p>System Uptime</p>
+        </div>
+
+        <div>
+            <h2>1M+</h2>
+            <p>Attendance Records</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+<section class="cta">
+
+    <h2>Ready to Simplify Attendance?</h2>
+
+    <p>
+        Join thousands of organizations already using Attendify.
+    </p>
+
+    <button class="primary-btn">
+        Start Free Trial
+    </button>
+
+</section>
+
+<footer>
+    © 2026 Attendify. All Rights Reserved.
+</footer>
+
 </body>
 </html>
